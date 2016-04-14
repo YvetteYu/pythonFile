@@ -7,6 +7,7 @@ del data
 with open('match2/match_bool.txt','r') as fin:
     mbool = fin.readlines()
 i = 1
+impact_threshold = 0.5
 data = []
 for line in mbool:
     points = 0
@@ -14,7 +15,7 @@ for line in mbool:
     bools.remove('\n')
     for ele in bools:
         points = points + float(ele)
-    if points/len(bools) >= 0.5:
+    if points/len(bools) >= impact_threshold:
         if i%num_com==0:
             data.append(((i//num_com)-1,(i%num_com)-1)) 
         else:
