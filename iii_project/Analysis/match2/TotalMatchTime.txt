@@ -1,1 +1,0 @@
-match 1361 companies and 26000 salary data, costs 1750.39401695s
