@@ -23,11 +23,11 @@ for i in range(0,len(cut_sal)):
             try:
                 m = re.search(ele,comlist[j])
                 if m:
-                    temp_bool.append(1)
+                    temp_bool.extend('1')
                 else:
-                    temp_bool.append(0)
+                    temp_bool.extend('0')
             except:
-                temp_bool.append(0)
+                temp_bool.extend('0')
                 continue
         match_bool.append(temp_bool)
 
@@ -38,7 +38,7 @@ fbool = codecs.open('match2/match_bool.txt','w',encoding='utf-8')
 for k in range(0,len(match_bool)):
     temp_bool = match_bool[k]
     for elebool in temp_bool:
-        fbool.write(str(elebool) + ' ')
+        fbool.write(elebool + ' ')
     fbool.write('\n')
 fbool.close()
 ftime = open('match2/TotalMatchTime.txt','w')
